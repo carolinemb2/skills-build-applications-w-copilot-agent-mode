@@ -69,7 +69,7 @@ function App() {
         {/* Footer */}
         <footer className="bg-light text-center text-lg-start mt-5 py-3">
           <div className="text-center p-3">
-            © 2024 OctoFit Tracker - Your Fitness Journey Companion
+            © {new Date().getFullYear()} OctoFit Tracker - Your Fitness Journey Companion
           </div>
         </footer>
       </div>
