@@ -13,9 +13,9 @@ A comprehensive fitness tracking application built with Django REST Framework an
 ## Tech Stack
 
 ### Backend
-- Django 4.1.7
+- Django 4.2.26 (LTS with security patches)
 - Django REST Framework
-- SQLite/MongoDB (Djongo)
+- SQLite (default for development)
 - django-allauth for authentication
 - django-cors-headers for CORS support
 
@@ -133,7 +133,9 @@ The frontend uses React with functional components and hooks. Main components:
 The backend is configured to allow requests from `http://localhost:3000` (development) and GitHub Codespaces environments.
 
 ### Database
-Currently configured to use SQLite for development. For production, configure MongoDB using the djongo engine in `settings.py`.
+Currently configured to use SQLite for development.
+
+**MongoDB Support (Optional)**: The application can be configured for MongoDB, but note that djongo has dependency conflicts with the latest security-patched versions of Django and sqlparse. If MongoDB is required, you would need to use older, vulnerable versions of these packages, which is not recommended for production use.
 
 ## License
 
