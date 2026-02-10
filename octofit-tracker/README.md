@@ -12,11 +12,11 @@ A fitness tracking application built with Django REST Framework and React for Me
 
 ## Technology Stack
 
-- **Backend**: Python 3.12, Django 4.1.7, Django REST Framework 3.14.0
+- **Backend**: Python 3.12, Django 4.2.26, Django REST Framework 3.14.0
 - **Frontend**: React 18, Bootstrap 5, React Router
-- **Database**: SQLite (for development), MongoDB support available via djongo
+- **Database**: SQLite (for development)
 
-> **Note**: The application currently uses SQLite for ease of development. MongoDB support is included via the djongo package in requirements.txt and can be configured in settings.py when needed.
+> **Note**: The application uses SQLite as the database. Previous MongoDB support via djongo has been removed due to dependency conflicts with security updates.
 
 ## Project Structure
 

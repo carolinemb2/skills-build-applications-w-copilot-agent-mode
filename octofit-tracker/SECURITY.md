@@ -3,11 +3,37 @@
 ## Security Scan Results
 
 **Date**: 2026-02-10
+**Last Updated**: 2026-02-10 (Security patches applied)
 
 ### CodeQL Analysis
 - **Status**: ✅ PASSED
 - **Python Analysis**: No security alerts found
 - **JavaScript Analysis**: No security alerts found
+
+### Security Vulnerabilities Fixed
+
+#### Dependency Updates (All Patched)
+1. **Django**: Upgraded from 4.1.7 to 4.2.26
+   - Fixed: DOS vulnerability in HttpResponseRedirect on Windows
+   - Fixed: SQL injection via _connector keyword argument in QuerySet
+   
+2. **sqlparse**: Upgraded from 0.2.4 to 0.5.0
+   - Fixed: DOS vulnerability from heavily nested list parsing
+
+3. **tornado**: Upgraded from 6.4.1 to 6.5
+   - Fixed: Excessive logging from malformed multipart form data
+   - Fixed: HTTP cookie parsing DOS vulnerability
+
+4. **urllib3**: Upgraded from 2.2.3 to 2.6.3
+   - Fixed: Decompression-bomb safeguards bypass
+   - Fixed: Improper handling of highly compressed data
+   - Fixed: Unbounded decompression chain links
+
+#### Dependencies Removed
+- **djongo**: Removed due to incompatibility with security updates
+- **pymongo**: Removed (not needed for SQLite implementation)
+
+> **Note**: MongoDB support was removed to allow critical security updates. The application uses SQLite which is sufficient for the educational use case.
 
 ### Security Measures Implemented
 
@@ -43,11 +69,11 @@
    - Add input validation and sanitization
    - Implement proper error handling
 
-2. **MongoDB Configuration (if using):**
-   - The instructions specified MongoDB support, which is included via djongo package
-   - Currently using SQLite for development simplicity
-   - To use MongoDB, update DATABASES in settings.py to use djongo engine
-   - Ensure MongoDB is properly secured with authentication
+2. **Database Configuration:**
+   - Currently using SQLite for simplicity and security
+   - For production, consider PostgreSQL or MySQL
+   - MongoDB support was removed to allow critical security updates
+   - Ensure database is properly secured with authentication
 
 3. **User Authentication:**
    - Current implementation has basic User model
